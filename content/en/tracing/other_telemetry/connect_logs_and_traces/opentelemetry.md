@@ -38,7 +38,7 @@ To manually correlate your traces with your logs, patch the logging module you a
 # ########## injection.py
 from opentelemetry import trace
 
-class CustomDatadogLogProcessor(object):
+class CustomDatadogLogProcessor:
     def __call__(self, logger, method_name, event_dict):
         # An example of adding datadog formatted trace context to logs
         # from: https://github.com/open-telemetry/opentelemetry-python-contrib/blob/b53b9a012f76c4fc883c3c245fddc29142706d0d/exporter/opentelemetry-exporter-datadog/src/opentelemetry/exporter/datadog/propagator.py#L127-L129 
